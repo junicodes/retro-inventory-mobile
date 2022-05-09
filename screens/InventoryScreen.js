@@ -16,16 +16,19 @@ export default function InventoryScreen({navigation, route}) {
     loadDataStore();
 }, [])
 
-  useEffect(() => {
-      //load new payload if new item is added
-      if(route?.params?.canRefresh) {
-          loadDataStore();
-      }
-  }, [route])
+  // useEffect(() => {
+  //     //load new payload if new item is added
+      
+  //     if(route?.params?.canRefresh) {
+  //         loadDataStore();
+  //     }
+  // }, [route])
 
   const loadDataStore = async () => {
-    const payload = await getData('@inventory')
-    setPayload(payload?.reverse() || null);
+    const payload = await getData('@inventory');
+    if(payload !== null) {
+      setPayload(payload.reverse());
+    }
   }
 
   const noDataFound = (
