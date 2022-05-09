@@ -6,6 +6,7 @@ import {
   NavigationContainer,
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import AddInventoryScreen from "../screens/AddInventoryScreen";
 
 import NotFoundScreen from "../screens/NotFoundScreen";
 import BottomTabNavigator from "./BottomTabNavigator";
@@ -30,6 +31,9 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
+      <Stack.Group screenOptions={{ presentation: 'modal' }}>
+        <Stack.Screen name="AddInventory" component={AddInventoryScreen} />
+      </Stack.Group>
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
