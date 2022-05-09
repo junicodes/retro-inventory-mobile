@@ -19,7 +19,7 @@ export default function InventoryScreen({navigation, route}) {
   }
 
   useEffect(async () => {
-    // await AsyncStorage.removeItem('@inventory')
+    //await AsyncStorage.removeItem('@inventory')
     loadDataStore();
   }, [])
 
