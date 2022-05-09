@@ -168,8 +168,6 @@ export default function InventoryInsert({formRef, onFormDataSubmit}) {
                         data={category}
                         ref={selDropDownRef}
                         onSelect={selectedItem => {  
-                            //set type for tag selection
-                            console.log(selectedItem)
                             setcategoryDefault(selectedItem)
                         }}
                         defaultButtonText={categoryDefault}

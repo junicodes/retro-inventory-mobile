@@ -1,7 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View, ActivityIndicator, FlatList, SafeAreaView } from "react-native";
-import { Image } from '@rneui/themed';
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { useRef, useState } from "react";
 import InventoryInsert from "../components/InventoryInsertI";
 import { getData, storeData } from "../utils/dataService";

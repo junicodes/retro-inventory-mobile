@@ -1,6 +1,5 @@
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import inventoryData from "./inventoryData.json";
 
 export const getData = async (key) => {
     try {

@@ -1,19 +1,18 @@
-import Reeact, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, TouchableOpacity, View, ActivityIndicator, FlatList, SafeAreaView } from "react-native";
-import { Button, CheckBox } from '@rneui/themed';
-import { offlineImage, onlineImage } from '../utils/images';
+import { StyleSheet, Text, TouchableOpacity, View, ActivityIndicator } from "react-native";
 import { Image } from '@rneui/themed';
 import { ScrollView } from "react-native-gesture-handler";
-import { generalStyles } from "../utils/styles/global";
 import { getData } from "../utils/dataService";
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+//import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function InventoryScreen({navigation, route}) {
 
   const [payload, setPayload] = useState(null);
 
   useEffect(async () => {
+    // await AsyncStorage.removeItem('@inventory')
     loadDataStore();
 }, [])
 
