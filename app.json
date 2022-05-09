@@ -30,6 +30,21 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "sentry-expo"
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "software-engineer-co-founder-a",
+            "project": "test-inventory",
+            "authToken": "aca7a9fbcfd5411c8ad954bead61480610e9b02ace3f4ae0b11b83c4fee5c88f"
+          }
+        }
+      ]
     }
   }
 }

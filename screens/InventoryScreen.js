@@ -11,25 +11,26 @@ export default function InventoryScreen({navigation, route}) {
 
   const [payload, setPayload] = useState(null);
 
-  useEffect(async () => {
-    // await AsyncStorage.removeItem('@inventory')
-    loadDataStore();
-}, [])
-
-  // useEffect(() => {
-  //     //load new payload if new item is added
-      
-  //     if(route?.params?.canRefresh) {
-  //         loadDataStore();
-  //     }
-  // }, [route])
-
   const loadDataStore = async () => {
     const payload = await getData('@inventory');
     if(payload !== null) {
       setPayload(payload.reverse());
     }
   }
+
+  useEffect(async () => {
+    // await AsyncStorage.removeItem('@inventory')
+    loadDataStore();
+  }, [])
+
+  useEffect(() => {
+      //load new payload if new item is added
+      if(route.params) {
+        if(route.params.canRefresh) {
+          loadDataStore();
+        }
+      }
+  }, [route])
 
   const noDataFound = (
     <> 
