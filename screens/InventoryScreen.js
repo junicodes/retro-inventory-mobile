@@ -70,7 +70,7 @@ export default function InventoryScreen({navigation, route}) {
       <StatusBar style="dark"/>
       <View style={styles.leadingHeader}>
         <Text style={styles.leadingHeaderText}>Inventory</Text>
-        <TouchableOpacity style={{backgroundColor: 'blue', borderRadius: '100%', padding: 5}} onPressIn={() => navigation.navigate('AddInventory')}>
+        <TouchableOpacity style={{backgroundColor: 'blue', borderRadius: 999, padding: 5}} onPressIn={() => navigation.navigate('AddInventory')}>
           <MaterialCommunityIcons size={20} name="plus" color={'white'} />
         </TouchableOpacity>
       </View>
